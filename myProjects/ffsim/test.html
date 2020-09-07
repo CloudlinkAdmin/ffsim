@@ -1,0 +1,30 @@
+<title>Submit event - JS</title>
+<link rel="stylesheet" href="https://youtube.local/assets/dode.css">
+
+<body>
+    <h1>Submit Event - JS</h1>
+    <form id="myForm" class="form">
+        <label for="username">Username</label>
+        <input type="text" name="username" id="username">
+        <label for="password">Password</label>
+        <input type="password" name="password" id="password">
+        <button type="submit">Login</button>
+    </form>
+
+    <script>
+        const myForm = document.getElementById("myForm");
+
+            myForm.addEventListener("submit", (e) => {
+            e.preventDefault();
+            //console.log("Something");
+
+            const request = new XMLHttpRequest();
+
+            request.open("post", "./login.php", true);
+            request.onload = function () {
+                console.log(request.responseText);
+            }
+            request.send(new FormData(myForm));
+            });
+    </script>
+</body>

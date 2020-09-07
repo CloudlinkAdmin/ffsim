@@ -1,0 +1,17 @@
+{
+    "assetName": "House P22",
+    "assetClass": "Real Estate",
+    "finance": {
+        "buyPrice": "5000000",
+        "equity": "1000000",
+        "loan": "4000000"
+    },
+    "risk": {
+        "riskLevel": "Medium"
+    },
+    "Date/time": {
+        "buyTime": "06/07/2020",
+        "holdTime": "06/07/2025"
+    }
+
+}

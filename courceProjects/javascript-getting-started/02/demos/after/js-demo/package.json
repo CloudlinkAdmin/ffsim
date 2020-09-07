@@ -1,0 +1,16 @@
+{
+  "name": "js-starter-code",
+  "version": "1.0.0",
+  "description": "JS Starter Code",
+  "main": "script.js",
+  "scripts": {
+    "start": "lite-server"
+  },
+  "author": "Pluralsight",
+  "license": "ISC",
+  "type": "utils",
+  "devDependencies": {
+    "lite-server": "^2.5.4"
+  
+  }
+}

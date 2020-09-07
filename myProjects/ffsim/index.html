@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>ffSIM</title>
+  
+  <link rel="stylesheet" href="./css/style.css">
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700" rel="stylesheet">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+  <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+    
+</head>
+
+<body>
+
+  <!-- Start of left menu-->
+  <div class="menuleft">
+    <div class="sitelogo">
+    </div>
+    <div class="sidenav">
+      <a href="./index.html">Overview</a>
+      <button class="dropdown-btn">View<i class="fa fa-caret-down"></i></button>
+      <div class="dropdown-container">
+        <a href="#">Assets</a>
+        <a href="#">Incomes</a>
+        <a href="#">Expenses</a>
+        <a href="#">Interests</a>
+      </div>
+      <button class="dropdown-btn">New<i class="fa fa-caret-down"></i></button>
+      <div class="dropdown-container">
+        <a href="./newAsset.html">Asset</a>
+        <a href="./newIncome.html">Income</a>
+        <a href="./newExpense.html">Expense</a>
+      </div>
+    </div>
+  </div>
+  <!-- End of left menu-->
+    
+  <!-- Start of main content-->
+  <div class="main">
+
+    <!-- Start of top menu-->
+    <div class="globalmenu"><h1 class="h1">Overview</h1>
+    </div>
+    <!-- End of top menu-->
+
+    <!-- Start of content-->
+    <div class="outer-wrapper">
+        <div class="inner-wrapper">
+            <div class="data-wrapper">
+                <div class="data-header">
+                    <p>Add a asset</p>
+                </div>        
+                <div class="data-text">
+            
+
+                    <form id="assetForm" class="form" action="./login.php" name="assetFrom"> <!--Action is where it will get sent action="#" method="POST"-->   
+                        <div class="error" data-errormsg="">
+                            <label for="input-asset-name">Select Asset Name</label>
+                            <input type="text" id="input-asset-name"/>
+                        </div>
+                    
+                        <div class="error" data-errormsg="">
+                            <label for="assetClass">Select Asset Class</label>
+                        
+                            <select name="assetClass" id="assetType" onchange="selectedAsset()" autofocus>
+                                <option value="none">--</option>
+                                <option value="realEstate">Real estate</option>
+                                <option value="indexFund">Index funds</option>
+                                <option value="forex">Forex</option>
+                                <option value="stocks">Stocks</option>
+                                <option value="crypto">Crypto</option>
+                            </select>
+                        </div>  
+                        <form id="form">
+                            <input type="radio" name="stack" value="newRealEstate">Real Estate<br>
+                            <input type="radio" name="stack" value="newIndexFund">Index Fund<br>
+                            <input type="radio" name="stack" value="west">west<br>
+                            <input type="radio" name="stack" value="south">south
+                        </form>
+                        <p id="radioClicked"></p>
+                    
+                </div>
+
+            </div>
+
+            <!--Start real estate Block-->
+            
+            <div class="data-wrapper newRealEstate">
+                <div class="data-header">
+                    <p>Add finacials</p>
+                </div>        
+                <div class="data-text">
+                    <div class="error" data-errormsg="">
+                        <label for="inputTotalCost">Enter total cost</label>
+                        <input type="text" id="selectedCost"/>
+                    </div>
+                    <div class="error" data-errormsg="">
+                        <label for="inputEquity">Enter invested equity</label>
+                        <input type="text" id="selectedEquity"/>
+                    </div>
+                    <div class="error" data-errormsg="">
+                        <label for="inputInterest">Enter loan interest (%)</label>
+                        <input type="text" id="selectedInterest"/>
+                    </div>
+                    <div class="error" data-errormsg="">
+                        <label for="inputYears">Enter years</label>
+                        <input type="text" id="selectedYears"/>
+                    </div>
+                
+                    
+                    
+                    <div class="submit-box">
+                        <button id="button-cancel">Cancel</button>
+                        <button id="button-submit">Submit</button>
+                        <button id="calc" onclick="calculateLoan()">Calculate</button>
+                    </div>
+    
+                <!--FORM-->
+                </div> 
+                
+            </div>
+                <div id="codeblock">
+                    
+                </div>
+                <p id="loan"></p>
+
+            <!--</div>-->
+            </form>
+            <!--End real estate block-->
+
+        </div>       
+        
+    </div>
+
+    <!-- End of content-->
+
+  </div>
+  <!-- End of main content-->
+    
+
+  <!-- Start of scripts-->
+  <script src="app.js"></script>
+  <!-- End of scripts-->
+    
+</body>
+</html>
